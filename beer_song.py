@@ -7,6 +7,8 @@ class BeerSong():
             return '{} bottles'.format(number_of_bottles)
         elif number_of_bottles == 1:
             return '1 bottle'
+        else:
+            return 'no more bottles'
 
     def at(self, level):
         base_lyrics = '{} of beer on the wall, {} of beer.\nTake one down and pass it around, {} of beer on the wall.'
