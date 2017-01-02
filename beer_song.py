@@ -2,7 +2,8 @@ class BeerSong():
     def __init__(self):
         pass
 
-    def bottles(self, number_of_bottles):
+    @staticmethod
+    def bottles(number_of_bottles):
         if number_of_bottles > 1:
             return '{} bottles'.format(number_of_bottles)
         elif number_of_bottles == 1:
@@ -11,8 +12,13 @@ class BeerSong():
             return 'no more bottles'
 
     def at(self, level):
-        base_lyrics = '{} of beer on the wall, {} of beer.\nTake one down and pass it around, {} of beer on the wall.'
-        return base_lyrics.format(self.bottles(level), self.bottles(level), self.bottles(level - 1))
+        if level > 0:
+            base_lyrics = '{} of beer on the wall, {} of beer.\nTake one down and pass it around, {} of beer on the wall.'
+            return base_lyrics.format(self.bottles(level), self.bottles(level), self.bottles(level - 1))
+        else:
+            base_lyrics = '{} of beer on the wall, {} of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.'
+            no_of_bottles = self.bottles(level)
+            return base_lyrics.format(no_of_bottles[0].upper() + no_of_bottles[1:], no_of_bottles)
 
     def main(self):
         pass
