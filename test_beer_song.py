@@ -16,5 +16,11 @@ class TestBeerSong(unittest.TestCase):
                    '\nTake one down and pass it around, 2 bottles of beer on the wall.'
         self.assertEqual(bs.at(3), expected, 'Level 3 lyrics different')
 
+    def test_print_level_2(self):
+        bs = BeerSong()
+        expected = '2 bottles of beer on the wall, 2 bottles of beer.' \
+                   '\nTake one down and pass it around, 1 bottle of beer on the wall.'
+        self.assertEqual(bs.at(2), expected, 'Level 2 lyrics different')
+
 if __name__ == '__main__':
     unittest.main()
