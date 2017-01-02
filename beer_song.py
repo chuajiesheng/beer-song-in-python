@@ -24,8 +24,13 @@ class BeerSong():
         second_sentence = self.SECOND_SENTENCE.format(self.bottles(level - 1)) if level > 0 else self.BUY_MORE_BEER
         return '\n'.join([first_sentence, second_sentence])
 
-    def main(self):
-        pass
+    def main(self, level):
+        if level < 0:
+            exit(0)
+
+        print(self.at(level))
+        print('')
+        self.main(level - 1)
 
 if __name__ == '__main__':
-    BeerSong().main()
+    BeerSong().main(99)
