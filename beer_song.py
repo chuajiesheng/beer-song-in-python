@@ -3,10 +3,10 @@ class BeerSong():
         pass
 
     @staticmethod
-    def bottles(number_of_bottles):
-        if number_of_bottles > 1:
-            return '{} bottles'.format(number_of_bottles)
-        elif number_of_bottles == 1:
+    def bottles(no_of_bottle):
+        if no_of_bottle > 1:
+            return '{} bottles'.format(no_of_bottle)
+        elif no_of_bottle == 1:
             return '1 bottle'
         else:
             return 'no more bottles'
